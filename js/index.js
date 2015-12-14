@@ -7,7 +7,7 @@ $(function () {
 
     function init() {
         // 倒计时
-        countdown(2, function () {
+        countdown(2, 'nozero', function () {
             redRainInit();
         });
         // 事件
@@ -23,10 +23,17 @@ $(function () {
         });
     }
 
-    function countdown(second, callback) {
+    function countdown(second, demand, callback) {
+        if (typeof demand == 'function') {
+            callback = demand;
+            demand = '';
+        }
+
         var i = second;
+        var point = demand == 'nozero' ? 0 : -1;
+
         var timer = setInterval(function () {
-            if (i == 0) {
+            if (i == point) {
                 clearInterval(timer);
                 if (callback) {
                     callback();
@@ -46,7 +53,7 @@ $(function () {
 
     function redRainInit() {
         $('.content-init').hide();
-        $('.content-ing').removeClass('hidden');
+        $('.content-ing').fadeIn();
 
         // 抢红包
         var windowWidth = $(window).width() - 80,
@@ -74,7 +81,6 @@ $(function () {
         var moveTimer = setInterval(function () {
             moveHandler(idx);
             idx++;
-            console.log(idx);
             if (idx == 10) {
                 idx = 0;
             }
@@ -102,12 +108,7 @@ $(function () {
     }
 
     function renderResult() {
-        $('.content-ing').addClass('hidden');
-        if (shocked >= 10) { // 中奖
-            alert('成功');
-        }
-        else { // 未中奖
-            alert('失败');
-        }
+        $('.content-ing').hide();
+        $('.content-result').text(shocked >= 10 ? '成功' : '失败').fadeIn();
     }
 });
