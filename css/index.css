@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e2e2e2;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+.hidden {
+    display: none;
+}
+
+.rel {
+    position: relative;
+}
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.action {
+    padding: 16px 0;
+    text-align: center;
+}
+
+.content-init .countdown3 {
+    width: 50px;
+    height: 50px;
+    margin: 40% auto 0;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    background: #07b576;
+    color: white;
+}
+
+.content-ing .countdown10 {
+    position: absolute;
+    width: 20%;
+    top: 10px;
+    left: 45%;
+    padding: 10px 0;
+    background: #07b576;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.content-ing .countdown10:after {
+    content: ' s';
+}
+
+.content-ing .number {
+    position: absolute;
+    width: 50px;
+    bottom: 16px;
+    left: 16px;
+    padding: 8px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: #07b576;
+}
+
+.content-ing .canvas {
+    position: relative;
+    overflow: hidden;
+}
+
+.content-ing .canvas .item {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    top: -50px;
+    background: white;
+    border-radius: 4px;
+}
+
+.content-ing .canvas .item.falling {
+    top: 1200px;
+}
+
+.rules {
+    position: relative;
+}
+
+.tel a {
+    display: block;
+    height: 30px;
+    text-align: center;
+}
+
+.mask {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 998;
+}
